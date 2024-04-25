@@ -239,7 +239,7 @@ public class IntercomModule extends ReactContextBaseJavaModule {
     }
 
     private Intercom.Visibility visibilityStringToVisibility(String visibility) {
-      if (visibility.equalsIgnoreCase("VISIBLE")) {
+      if ("VISIBLE".equalsIgnoreCase(visibility)) {
         return Intercom.Visibility.VISIBLE;
       } else {
         return Intercom.Visibility.GONE;
@@ -290,25 +290,25 @@ public class IntercomModule extends ReactContextBaseJavaModule {
         for (Map.Entry<String, Object> entry : map.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (key.equals("email")) {
+            if ("email".equals(key)) {
                 builder.withEmail((String)value);
-            } else if (key.equals("user_id")) {
+            } else if ("user_id".equals(key)) {
                 builder.withUserId((String)value);
-            } else if (key.equals("name")) {
+            } else if ("name".equals(key)) {
                 builder.withName((String)value);
-            } else if (key.equals("phone")) {
+            } else if ("phone".equals(key)) {
                 builder.withPhone((String)value);
-            } else if (key.equals("language_override")) {
+            } else if ("language_override".equals(key)) {
                 builder.withLanguageOverride((String)value);
-            } else if (key.equals("signed_up_at")) {
+            } else if ("signed_up_at".equals(key)) {
                 Date dateSignedUpAt = new Date(((Number)value).longValue() * 1000);
                 builder.withSignedUpAt(dateSignedUpAt);
-            } else if (key.equals("unsubscribed_from_emails")) {
+            } else if ("unsubscribed_from_emails".equals(key)) {
                 builder.withUnsubscribedFromEmails((Boolean)value);
-            } else if (key.equals("custom_attributes")) {
+            } else if ("custom_attributes".equals(key)) {
                 // value should be a Map here
                 builder.withCustomAttributes((Map)value);
-            } else if (key.equals("companies")) {
+            } else if ("companies".equals(key)) {
                 ArrayList<Map<String, Object>> companyaArray =  (ArrayList<Map<String, Object>>)value;
                 for (Map<String, Object> companyObject: companyaArray) {
                     if (companyObject.containsKey("company_id")) {
